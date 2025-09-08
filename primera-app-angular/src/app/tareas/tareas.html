@@ -1,14 +1,28 @@
+@if (estaAgregandoTareaNueva) {
+<app-tarea-nueva [idUsuario]="idUsuario"  (cerrar)="alCerrar()" />
+
+}
+
+
 <section id="tareas">
 
   <header>
     <h2>Tareas de {{ nombre }}</h2>
     <menu>
-      <button>Agregar tarea</button>
+      <button (click)="alIniciarTareaNueva()">Agregar tarea</button>
     </menu>
   </header>
 
 
   <ul>
 
+    @for (tarea of tareasUsuarioSeleccionado; track tarea.id) {
+    <li>
+      <app-tarea-literales [tarea]="tarea"  />
+    </li>
+    }
+
+
   </ul>
+
 </section>

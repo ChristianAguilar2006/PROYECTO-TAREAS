@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-interface Usuario{
-  id: string;
-  nombre: string;
-  avatar: string;
-}
+import { type Usuario } from './usuario.model';
+import { Tarjeta } from "../compartida/tarjeta/tarjeta";
 /*type Usuario = {
   id: string;
   nombre: string;
@@ -15,10 +12,12 @@ interface Usuario{
   selector: 'app-usuario',
   standalone: true,
   templateUrl: './usuario.html',
-  styleUrl: './usuario.css'
+  styleUrl: './usuario.css',
+  imports: [Tarjeta]
 })
 export class UsuarioComponente {
   @Input({ required: true }) usuario!: Usuario
+  @Input({ required: true }) seleccionado!: boolean;
   @Output() seleccion = new EventEmitter<string>();
 
 
