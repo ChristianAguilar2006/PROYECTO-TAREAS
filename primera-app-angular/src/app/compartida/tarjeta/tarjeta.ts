@@ -2,11 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tarjeta',
-  standalone: true,
-  imports: [],
+  standalone: false,   // importante
   templateUrl: './tarjeta.html',
-  styleUrl: './tarjeta.css'
+  styleUrls: ['./tarjeta.css']
 })
-export class Tarjeta {
-
-}
+export class Tarjeta { }

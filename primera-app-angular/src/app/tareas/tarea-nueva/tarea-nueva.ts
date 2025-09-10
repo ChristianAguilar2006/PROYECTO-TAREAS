@@ -1,12 +1,10 @@
 import { Component,EventEmitter,inject,Input, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { type NuevaTareaInfo } from '../tarea.literales/tareas.litareales.model';
 import { TareasService } from '../tareas.service';
 
 @Component({
   selector: 'app-tarea-nueva',
-  standalone: true,
-  imports: [FormsModule],
+  standalone: false,
   templateUrl: './tarea-nueva.html',
   styleUrl: './tarea-nueva.css'
 })

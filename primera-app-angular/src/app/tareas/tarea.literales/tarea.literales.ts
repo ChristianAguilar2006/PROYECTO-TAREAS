@@ -2,14 +2,11 @@ import { TareasService } from './../tareas.service';
 import { Component,inject,Input } from '@angular/core';
 
 import { type Tarealit } from './tareas.litareales.model';
-import { Tarjeta } from "../../compartida/tarjeta/tarjeta";
- import { DatePipe } from "@angular/common";
 
 
 @Component({
   selector: 'app-tarea-literales',
- standalone: true,
-  imports: [Tarjeta,DatePipe],
+ standalone: false,
   templateUrl: './tarea.literales.html',
   styleUrl: './tarea.literales.css'
 })

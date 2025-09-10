@@ -1,13 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { TareaLiterales } from './tarea.literales/tarea.literales';
-import { TareaNueva } from "./tarea-nueva/tarea-nueva";
 import { type NuevaTareaInfo } from './tarea.literales/tareas.litareales.model';
 import { TareasService } from './tareas.service';
 
 @Component({
   selector: 'app-tareas',
-  standalone: true,
-  imports: [TareaLiterales, TareaNueva],
+  standalone: false,
   templateUrl: './tareas.html',
   styleUrl: './tareas.css'
 })
