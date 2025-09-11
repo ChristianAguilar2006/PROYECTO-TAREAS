@@ -38,12 +38,20 @@ export class TareasService{
 
   ];
 
-  constructor(){
-    const tareas = localStorage.getItem('tareas');
-    if(tareas){
-      this.tareas=JSON.parse(tareas);
+ constructor() {
+  const tareasGuardadas = localStorage.getItem('tareas');
+  if (tareasGuardadas) {
+    try {
+      const parsed = JSON.parse(tareasGuardadas);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        this.tareas = parsed;
+      }
+    } catch {
+      // Si hay error de parse, ignoramos y usamos tareas iniciales
     }
   }
+}
+
 obternerTareasDelUsuario(idUsuario: string){
     return this.tareas.filter((tarea) => tarea.idUsuario === idUsuario);
 }

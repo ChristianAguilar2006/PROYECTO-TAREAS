@@ -1,29 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { App } from './app';
 import { UsuarioComponente } from './usuario/usuario';
 import { EncabezadoComponente } from './encabezado/encabezado.componente';
-import { Tareas } from './tareas/tareas';
-import { TareaLiterales } from './tareas/tarea.literales/tarea.literales';
-import { TareaNueva } from './tareas/tarea-nueva/tarea-nueva';
-import { FormsModule } from '@angular/forms';
-import { CompartidaModule } from './compartida/compartida.module';
 
+import { CompartidaModule } from './compartida/compartida.module';
+import { tareasModule } from './tareas/tareas.module';
 
 @NgModule({
   declarations: [
     App,
     EncabezadoComponente,
     UsuarioComponente,
-    Tareas,
-    TareaLiterales,
-    TareaNueva,
-
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    CompartidaModule
+    CompartidaModule,
+    tareasModule
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es' }
   ],
   bootstrap: [App]
 })

@@ -6,7 +6,7 @@ import { TareasService } from './tareas.service';
   selector: 'app-tareas',
   standalone: false,
   templateUrl: './tareas.html',
-  styleUrl: './tareas.css'
+  styleUrls: ['./tareas.css']
 })
 export class Tareas {
   @Input({required: true}) idUsuario!: string;
